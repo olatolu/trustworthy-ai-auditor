@@ -50,12 +50,12 @@ class HomeController extends Controller
 
         abort_if(($test->is_active == 0 && Gate::denies('category_access')), Response::HTTP_NOT_FOUND, 'NOT FOUND');
 
-        if(!auth()->check()){
-            Session::put('url.intended', url()->full());
-            return redirect(route('client.getu.check'));
-        }else{
-            return redirect(route('client.get.test.start', $test->slug));
-        }
+//        if(!auth()->check()){
+//            Session::put('url.intended', url()->full());
+//            return redirect(route('client.getu.check'));
+//        }else{
+            return redirect(route('profile.index', $test->id));
+//        }
 
     }
 }

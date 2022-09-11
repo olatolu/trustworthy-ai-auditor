@@ -6,14 +6,16 @@
 
 Route::get('/', 'TestsController@index')->name('test.home');
 
-Route::get('assessment/{slug}', 'HomeController@getLanding')->name('get.test.landing');
+Route::get('toolkit/{slug}', 'HomeController@getLanding')->name('get.test.landing');
+
+Route::get('toolkit/profile/{id}', 'ProfileController@index')->name('profile.index');
 
 Route::group(['middleware' => ['web']], function () {
 
-    Route::get('assessment/report/{result_id}', 'ResultsController@report')->name('report.get');
+    Route::get('toolkit/report/{result_id}', 'ResultsController@report')->name('report.get');
 
-    Route::post('assessment/c-report/', 'ResultsController@Creport')->name('Creport.post');
-    Route::get('assessment/c-report/{category_id}', 'ResultsController@getCreport')->name('Creport.get');
+    Route::post('toolkit/c-report/', 'ResultsController@Creport')->name('Creport.post');
+    Route::get('toolkit/c-report/{category_id}', 'ResultsController@getCreport')->name('Creport.get');
 
 
 });
@@ -29,23 +31,24 @@ Route::group(['as' => 'client.', 'middleware' => ['web']], function () {
     Route::get('u/register', 'Auth\RegisterController@getuRegister')->name('getu.register');
     Route::post('u/register', 'Auth\RegisterController@postuRegister')->name('postu.register');
 
+    Route::get('toolkit/{slug}/start', 'TestsController@getTest')->name('get.test.start');
+
+    Route::post('toolkit', 'TestsController@store')->name('test.store');
+
+    Route::post('toolkit/profile/{id}', 'ProfileController@store')->name('profile.store');
+
+    Route::get('results/{result_id}', 'ResultsController@show')->name('results.show');
+    Route::get('send/{result_id}', 'ResultsController@send')->name('results.send');
+
+
 });
 Route::group(['as' => 'client.', 'middleware' => ['auth']], function () {
     Route::get('home', 'HomeController@redirect');
     Route::get('dashboard', 'HomeController@index')->name('home');
     Route::get('change-password', 'ChangePasswordController@create')->name('password.create');
     Route::post('change-password', 'ChangePasswordController@update')->name('password.update');
+    Route::get('results/chart', 'TestsController@line')->name('results.chart');
 
-    //Cust
-    Route::get('assessment/{slug}/start', 'TestsController@getTest')->name('get.test.start');
-
-    //Testing Chart
-//    Route::get('results/chart', 'TestsController@line')->name('results.chart');
-
-    Route::post('assessment', 'TestsController@store')->name('test.store');
-
-    Route::get('results/{result_id}', 'ResultsController@show')->name('results.show');
-    Route::get('send/{result_id}', 'ResultsController@send')->name('results.send');
 });
 
 Auth::routes();

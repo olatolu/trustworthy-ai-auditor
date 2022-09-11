@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'site_title' => 'BusinessDoctor360',
-    'phone'      => '+234 705 577 4142',
-    'email'      => 'crm@businessdoctor360.org',
-    'main_site'  =>  'https://www.businessdoctor360.org'
+    'site_title' => 'AI Toolkits',
+    'phone'      => '+(01) 000 000 0000',
+    'email'      => 'info@aitoolkits.proj',
+    'main_site'  =>  '#'
 ];

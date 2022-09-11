@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <section class="jumbotron text-center" style="background: url('/images/newyork-copy.jpg'); background-position: center center;">
+    <section class="jumbotron text-center" style="background: url('/images/artificial-Intelligence-tools.jpeg'); background-position: center center;">
         <div class="container">
             <h1 class="text-white">{{ trans('panel.site_title') }}</h1>
             <p class="lead text-muted"></p>
@@ -22,6 +22,14 @@
                 <a name="main"></a>
 
                 @if(count($tests) > 0)
+
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>PROFILE - GENERIC INFORMATION OF TRUSTWORTHY AI AND STANDARDS</title><rect width="100%" height="100%" fill="#1013e8c4"></rect><foreignObject x="5%" y="30%" fill="#fff" dy=".0em" width="90%" height="100%"><h5 class="card-text text-center" xmlns="http://www.w3.org/1999/xhtml"><a class="text-white text-decoration-none" href="{{route('profile.index',0)}}">PROFILE - GENERIC INFORMATION OF TRUSTWORTHY AI AND STANDARDS</a></h5></foreignObject></svg>
+                        <div class="card-body" style="padding: 0px; border: 0px; min-height: 0px;">
+                        </div>
+                        </div>
+                    </div>
 
                     @foreach($tests as $test)
                         <div class="col-md-4">
@@ -61,7 +69,7 @@
         <p class="float-right">
             <a href="#">Back to top</a>
         </p>
-        <p>&copy; 2020 All rights reserved by BusinessDoctor360 | Omnicore Services | Innovation360 LP Report</p>
+        <p>&copy; 2020 All rights reserved | {{ trans('panel.site_title') }} </p>
     </div>
 </footer>
 @endsection
