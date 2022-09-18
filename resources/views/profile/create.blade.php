@@ -441,7 +441,7 @@
                                     <div class="btn-group-toggle" data-toggle="buttons">
                                         <label class="btn btn-outline-info {{(old('q7') == 'Free')? 'active': '' }} options"
                                                data-target="q7_other">
-                                            <input type="radio" name="q3" value="Free"
+                                            <input type="radio" name="q7" value="Free"
                                                    autocomplete="off" {{(old('q7') == 'Free')? 'checked': '' }}>
                                             Free
                                         </label>

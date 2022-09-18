@@ -27,7 +27,7 @@ class StoreTestRequest extends FormRequest
                     'required_if:f_submit,0'
                 ],
 
-                'profile'=>[
+                'profile_id'=>[
                     'required'
                 ]
             ];

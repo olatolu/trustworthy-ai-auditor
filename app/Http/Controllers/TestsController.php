@@ -37,7 +37,7 @@ class TestsController extends Controller
 
         $options = collect($options);
 
-        $profile = Profile::find($request->profile);
+        $profile = Profile::find($request->profile_id);
 
         $result = $profile->profileResults()->create([
             'total_points' => $options->sum('point'),

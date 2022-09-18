@@ -136,7 +136,7 @@
                                         <div class="actions">
                                             <ul>
                                                 @if($j == 1)
-                                                    <li><a href="{{url('/')}}"><span class="js-btn-prev" title="BACK"><i class="fa fa-window-close"></i> CANCEL </span></a></li>
+{{--                                                    <li><a href="{{url('/')}}"><span class="js-btn-prev" title="BACK"><i class="fa fa-window-close"></i> CANCEL </span></a></li>--}}
                                                 @elseif($j > 1)
                                                     <li><span class="js-btn-prev" title="BACK"><i class="fa fa-arrow-left"></i> BACK </span></li>
                                                 @endif
@@ -146,7 +146,7 @@
                                     @elseif($j == $test->sections)
                                         <div class="actions">
                                             <ul>
-                                                <input type="hidden" name="profile" value="{{$profile}}">
+                                                <input type="hidden" name="profile_id" value="{{$profile}}">
 {{--                                                <li><span class="js-btn-prev" title="BACK"><i class="fa fa-arrow-left"></i> BACK </span></li>--}}
                                                 <li><button type="submit" title="NEXT">SUBMIT <i class="fa fa-arrow-right"></i></button></li>
                                             </ul>
@@ -209,6 +209,7 @@
                                 <!-- /.inner -->
                                 <div class="actions">
                                     <ul>
+                                        <input type="hidden" name="profile_id" value="{{$profile}}">
                                         <li><button type="submit" id="fsubmit" title="NEXT">SUBMIT <i class="fa fa-arrow-right"></i></button></li>
                                     </ul>
                                 </div>

@@ -21,6 +21,12 @@ class ResultsController extends Controller
         //Prepare Data
         $test = $result->category;
 
+        if($result->category_id == 2){
+
+            return view('response.assessment-2', compact('result', 'test'));
+
+        }
+
         $description = $test->description;
 
         $filename = $test->slug."-". time() ."-". $result->id . '.pdf';
@@ -45,91 +51,5 @@ class ResultsController extends Controller
 
     }
 
-    /***
-     * ClassROmm Report
-     *
-     */
-
-    public function Creport(Request $request){
-        $test = Category::findOrFail($request->category_id);
-
-        //dd($request->all());
-
-        $filename = $test->slug."-". time() .'.pdf';
-
-        $results = $test->categoryResults->pluck('total_points', 'id')->sort();
-        $users = count($results);
-        //dd($results);
-        $levels = [];
-        $levels[0] = $levels[1] = $levels[2] = 0;
-        $count1 = $count2 = $count3 = 0;
-        foreach ($results as $score){
-            if($score >= 0 && $score <= 4){
-                $count1 ++;
-            }elseif ($score > 4 && $score <= 7){
-                $count2 ++;
-            }elseif ($score > 7 && $score <= 10){
-                $count3 ++;
-            }
-        }
-
-        //dd($levels);
-
-        $grades = [round(($count1/$users)*100), round(($count2/$users)*100), round(($count1/$users)*100)];
-
-        //dd($grades);
-
-        if($request->has('mail') && $request->mail == 1){
-            $mailresults = $test->categoryResults;
-            foreach ($mailresults as $result) {
-                if ($result->is_report == 0) {
-
-                    try {
-
-                        //code to send the mail
-                        $result->user->notify(new SendRoomResultEmail($result));
-                        $result->is_report = 1;
-                        $result->save();
-
-                    } catch (\Swift_TransportException $transportExp) {
-                        //$transportExp->getMessage();
-                    }
-
-                }
-            }
-        }
-
-        return view('client.test.class-room', compact('test', 'filename', 'grades'));
-
-    }
-
-    public function getCreport($category_id){
-        $test = Category::findOrFail($category_id);
-
-        $filename = $test->slug."-". time() .'.pdf';
-
-        $results = $test->categoryResults->pluck('total_points', 'id')->sort();
-        $users = count($results);
-        //dd($results);
-        $levels = [];
-        $levels[0] = $levels[1] = $levels[2] = 0;
-        $count1 = $count2 = $count3 = 0;
-        foreach ($results as $score){
-            if($score >= 0 && $score <= 4){
-                $count1 ++;
-            }elseif ($score > 4 && $score <= 7){
-                $count2 ++;
-            }elseif ($score > 7 && $score <= 10){
-                $count3 ++;
-            }
-        }
-
-        //dd($levels);
-
-        $grades = [round(($count1/$users)*100), round(($count2/$users)*100), round(($count1/$users)*100)];
-
-        return view('client.test.class-room', compact('test', 'filename', 'grades'));
-
-    }
 
 }

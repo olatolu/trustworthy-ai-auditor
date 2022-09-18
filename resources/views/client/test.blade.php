@@ -8,7 +8,7 @@
             <p class="lead text-muted"></p>
             <p>
                 <a href="#main" class="btn btn-primary my-2">Get Started</a>
-                <a href="{{ trans('panel.main_site') }}" class="btn btn-secondary my-2">Go To Home</a>
+{{--                <a href="{{ trans('panel.main_site') }}" class="btn btn-secondary my-2">Go To Home</a>--}}
             </p>
         </div>
     </section>

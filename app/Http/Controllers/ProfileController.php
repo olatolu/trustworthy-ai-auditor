@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Http\Requests\ProfileRegisterRequest;
+use App\Newkit;
 use App\Profile;
 use App\Toolkit;
 use CountryState;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProfileController extends Controller
 {
@@ -67,50 +69,7 @@ class ProfileController extends Controller
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 
     public function prepare_data(Request $request): array
     {
@@ -133,14 +92,23 @@ class ProfileController extends Controller
 
     public function profile_register($profile){
         $countries = CountryState::getCountries();
-        $toolkits = Toolkit::all()->pluck('name','id');
+        $toolkits = Toolkit::all()->pluck('name','id')->toArray();
         //dd($toolkits);
         return view('profile.register.register', compact( 'profile', 'countries', 'toolkits'));
     }
 
     public function profile_register_store(ProfileRegisterRequest $request){
-        dd($request->all());
         $data = $request->all();
+        if($request->filled('attachment')){
+            $data['attachment'] = $request->file('attachment')->store('toolkit');
+        }
+
+        $new_kit = Newkit::create($data);
+
+        $test = Category::find(2);
+        if ($test) {
+            return redirect()->route('client.test.profile.start', ['slug' => $test->slug, 'profile' => $new_kit->profile_id]);
+        }
 
     }
 

@@ -75,7 +75,7 @@
                                     <legend class="w-auto">Select Toolkit
                                     </legend>
 
-                                    {!! Form::select('toolkit_id', $toolkits, old('toolkit_id'), ['class' => $errors->has('toolkit_id') ? 'form-control select2 js-example-placeholder-multiple is-invalid' : 'form-control select2 js-example-placeholder-multiple', 'id'=>'toolkit_id', 'required'=>'required']) !!}
+                                    {!! Form::select('toolkit_id', [''=>'Select'] + $toolkits, old('toolkit_id'), ['class' => $errors->has('toolkit_id') ? 'form-control select2 js-example-placeholder-multiple is-invalid' : 'form-control select2 js-example-placeholder-multiple', 'id'=>'toolkit_id', 'required'=>'required']) !!}
 
 
                                 @if($errors->has('toolkit_id'))
@@ -213,7 +213,7 @@
 
 
                         <div class="col-md-12">
-                            <input type="hidden" name="profile" value="{{$profile}}">
+                            <input type="hidden" name="profile_id" value="{{$profile}}">
                             <div class="col-md-6 ml-auto mr-auto"><button class="btn btn-block btn-primary">
                                 Continue
                             </button>

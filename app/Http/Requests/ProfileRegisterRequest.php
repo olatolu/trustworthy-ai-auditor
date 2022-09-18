@@ -25,7 +25,7 @@ class ProfileRegisterRequest extends FormRequest
     {
         return [
             //
-            'profile'=>'required',
+            'profile_id'=>'required',
             'type'=>'required',
             'toolkit_id'=>'required_if:type,existing',
             'manufacturer_name'=>'required_if:type,new',
