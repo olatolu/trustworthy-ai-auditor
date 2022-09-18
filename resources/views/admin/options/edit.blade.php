@@ -16,8 +16,6 @@
                     <span class="btn btn-info btn-xs select-all" style="border-radius: 0">{{ trans('global.select_all') }}</span>
                     <span class="btn btn-info btn-xs deselect-all" style="border-radius: 0">{{ trans('global.deselect_all') }}</span>
                 </div>
-                <input type="hidden" name="question_id" value="0">
-
                 {!! Form::select('questions[]', $questions, old('questions') ? old('questions') : $option->questions->pluck('id')->toArray(), ['class' => $errors->has('questions') ? 'form-control select2 is-invalid' : 'form-control select2', 'multiple' => true, 'id'=>'questions', 'required'=>true]) !!}
 
 

@@ -50,6 +50,7 @@ class ProfileStoreRequest extends FormRequest
             $rules['q'.$i] = 'required';
             $rules['q'.$i.'_other'] = 'required_if:q'.$i.',Others';
         }
+        $rules['assessment'] = 'required';
         return $rules;
     }
 

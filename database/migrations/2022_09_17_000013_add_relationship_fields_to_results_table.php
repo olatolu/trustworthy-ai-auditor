@@ -9,9 +9,9 @@ class AddRelationshipFieldsToResultsTable extends Migration
     public function up()
     {
         Schema::table('results', function (Blueprint $table) {
-            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('profile_id');
 
-            $table->foreign('user_id', 'user_fk_773765')->references('id')->on('users');
+            $table->foreign('profile_id', 'profile_fk_773785')->references('id')->on('profiles');
         });
     }
 }

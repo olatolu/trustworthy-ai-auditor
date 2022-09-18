@@ -1,14 +1,12 @@
 <?php
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
 
 Route::get('/', 'TestsController@index')->name('test.home');
 
 Route::get('toolkit/{slug}', 'HomeController@getLanding')->name('get.test.landing');
 
 Route::get('toolkit/profile/{id}', 'ProfileController@index')->name('profile.index');
+Route::post('toolkit/insert', 'ProfileController@insert');
 
 Route::group(['middleware' => ['web']], function () {
 
@@ -33,13 +31,15 @@ Route::group(['as' => 'client.', 'middleware' => ['web']], function () {
 
     Route::get('toolkit/{slug}/start', 'TestsController@getTest')->name('get.test.start');
 
+    Route::get('toolkit/{slug}/{profile}/start', 'TestsController@test_profile')->name('test.profile.start');
+    Route::get('toolkit/{profile}/register', 'ProfileController@profile_register')->name('test.profile.register');
+    Route::post('toolkit/register', 'ProfileController@profile_register_store')->name('test.profile.register.store');
+
     Route::post('toolkit', 'TestsController@store')->name('test.store');
 
     Route::post('toolkit/profile/{id}', 'ProfileController@store')->name('profile.store');
 
-    Route::get('results/{result_id}', 'ResultsController@show')->name('results.show');
-    Route::get('send/{result_id}', 'ResultsController@send')->name('results.send');
-
+    Route::get('toolkit/result/{result_id}', 'ResultsController@show')->name('results.show');
 
 });
 Route::group(['as' => 'client.', 'middleware' => ['auth']], function () {
@@ -47,7 +47,6 @@ Route::group(['as' => 'client.', 'middleware' => ['auth']], function () {
     Route::get('dashboard', 'HomeController@index')->name('home');
     Route::get('change-password', 'ChangePasswordController@create')->name('password.create');
     Route::post('change-password', 'ChangePasswordController@update')->name('password.update');
-    Route::get('results/chart', 'TestsController@line')->name('results.chart');
 
 });
 

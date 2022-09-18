@@ -2,115 +2,7 @@
 
 @section('content')
 
-    @if(!request()->has('q_st') && request()->has('q_st') !=1 )
-        <div class="wrapper">
-            <div class="steps-area steps-area-fixed">
-                <div class="image-holder">
-                    <img src="{{asset('app/assets/img/assessment-bg.jpg')}}" alt="{{$test->name}}">
-                </div>
-
-            </div>
-            <form class="multisteps-form__form" action="#" id="wizard" method="POST">
-
-                <div class="form-area position-relative">
-                    <!-- div 1 -->
-                    <div class="multisteps-form__panel js-active" data-animation="slideHorz">
-                        <div class="wizard-forms">
-                            <div class="inner clearfix">
-                                <div class="form-content pera-content">
-                                    <div class="step-inner-content">
-                                        <h2 class="text-center">{{$test->name}}</h2>
-
-                                        @if((strtotime($dateNow) >= strtotime($test->start_at)) && (strtotime($dateNow) < strtotime($test->end_at)))
-{{--                                            <div class="step-box">--}}
-{{--                                                <div class="row equal d-flex justify-content-center">--}}
-
-{{--                                                    <div class="col-md-4 box-content">--}}
-{{--                                                        <label class="step-box-content bg-white text-center relative-position">--}}
-{{--													<span class="step-box-icon">--}}
-{{--														<img src="/app/assets/img/icons/start.png" alt="">--}}
-{{--													</span>--}}
-{{--                                                            <span class="step-box-text">--}}
-{{--														{{ \Carbon\Carbon::parse($test->start_at)->format('d M, Y h:i:s A')}}--}}
-{{--													</span>--}}
-{{--                                                        </label>--}}
-{{--                                                    </div>--}}
-
-{{--                                                    <div class="col-md-4 box-content">--}}
-{{--                                                        <label class="step-box-content bg-white text-center relative-position">--}}
-{{--													<span class="step-box-icon">--}}
-{{--														<img src="/app/assets/img/icons/question.png" alt="">--}}
-{{--													</span>--}}
-{{--                                                            <span class="step-box-text">--}}
-{{--														{{count($test->categoryQuestions)}} Questions--}}
-{{--													</span>--}}
-
-{{--                                                        </label>--}}
-{{--                                                    </div>--}}
-{{--                                                    @if($test->test_duration > 0)--}}
-{{--                                                        <div class="col-md-4 box-content">--}}
-{{--                                                            <label class="step-box-content bg-white text-center relative-position">--}}
-{{--													<span class="step-box-icon">--}}
-{{--														<img src="/app/assets/img/icons/stop-watch.png" alt="">--}}
-{{--													</span>--}}
-{{--                                                                <span class="step-box-text">--}}
-{{--														{{$test->test_duration}} Minutes--}}
-{{--													</span>--}}
-
-{{--                                                            </label>--}}
-{{--                                                        </div>--}}
-{{--                                                    @endif--}}
-
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-
-                                        @elseif(strtotime($dateNow) > strtotime($test->end_at))
-                                            <h4 class="question-list mt-5">This Assessment is scheduled for {{ \Carbon\Carbon::parse($test->start_at)->format('d M, Y h:i:s A')}} and not available for now.</h4>
-                                        @else
-                                        <!-- Schedule CountDown-->
-                                            <h4 class="mt-5">This Assessment is scheduled for {{ \Carbon\Carbon::parse($test->start_at)->format('d M, Y h:i:s A')}}.</h4>
-                                            <div id="clockdiv">
-                                                <div>
-                                                    <span class="days"></span>
-                                                    <div class="smalltext">Days</div>
-                                                </div>
-                                                <div>
-                                                    <span class="hours"></span>
-                                                    <div class="smalltext">Hours</div>
-                                                </div>
-                                                <div>
-                                                    <span class="minutes"></span>
-                                                    <div class="smalltext">Minutes</div>
-                                                </div>
-                                                <div>
-                                                    <span class="seconds"></span>
-                                                    <div class="smalltext">Seconds</div>
-                                                </div>
-                                            </div>
-                                        @endif
-
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /.inner -->
-                            <div class="actions">
-                                <ul>
-                                    <li><a href="{{url('/')}}"><span class="js-btn-prev" title="BACK"><i class="fa fa-arrow-left"></i> Go Back </span></a></li>
-                                    @if((strtotime($dateNow) >= strtotime($test->start_at)) && (strtotime($dateNow)< strtotime($test->end_at)) )
-                                        <li><a href="{{url()->current()}}/?q_st={{$test->id}}" class=""><span class="js-btn-next text-white" title="NEXT">START <i class="fa fa-arrow-right"></i></span></a></li>
-                                    @endif
-                                </ul>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </div>
-
-    @elseif(request()->has('q_st') && request()->has('q_st') ==$test->id)
-
-        <div class="wrapper">
+  <div class="wrapper">
             <div class="steps-area steps-area-fixed">
                 <div class="image-holder">
                     <img src="{{asset('app/assets/img/assessment-bg.jpg')}}" alt="{{$test->name}}">
@@ -254,7 +146,8 @@
                                     @elseif($j == $test->sections)
                                         <div class="actions">
                                             <ul>
-                                                <li><span class="js-btn-prev" title="BACK"><i class="fa fa-arrow-left"></i> BACK </span></li>
+                                                <input type="hidden" name="profile" value="{{$profile}}">
+{{--                                                <li><span class="js-btn-prev" title="BACK"><i class="fa fa-arrow-left"></i> BACK </span></li>--}}
                                                 <li><button type="submit" title="NEXT">SUBMIT <i class="fa fa-arrow-right"></i></button></li>
                                             </ul>
                                         </div>
@@ -327,7 +220,7 @@
             </form>
 
         </div>
-    @endif
+
 
 @endsection
 

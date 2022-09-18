@@ -18,7 +18,7 @@ class Result extends Model
     ];
 
     protected $fillable = [
-        'user_id',
+        'profile_id',
         'created_at',
         'updated_at',
         'deleted_at',
@@ -28,9 +28,9 @@ class Result extends Model
         'pdf',
     ];
 
-    public function user()
+    public function profile()
     {
-        return $this->belongsTo(User::class, 'user_id');
+        return $this->belongsTo(Profile::class, 'user_id');
     }
 
     public function category()
@@ -41,5 +41,10 @@ class Result extends Model
     public function questions()
     {
         return $this->belongsToMany(Question::class)->withPivot(['option_id', 'points']);
+    }
+
+    public function question()
+    {
+        return $this->belongsTo(Question::class, 'question_id');
     }
 }

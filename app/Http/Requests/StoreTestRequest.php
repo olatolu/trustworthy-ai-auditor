@@ -8,7 +8,7 @@ class StoreTestRequest extends FormRequest
 {
     public function authorize()
     {
-        return auth()->check();
+        return true;
     }
 
     public function rules()
@@ -26,6 +26,10 @@ class StoreTestRequest extends FormRequest
                 'questions.*' => [
                     'required_if:f_submit,0'
                 ],
+
+                'profile'=>[
+                    'required'
+                ]
             ];
     }
 }

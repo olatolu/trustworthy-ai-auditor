@@ -6,6 +6,7 @@ use App\Category;
 use App\Http\Requests\StoreTestRequest;
 use App\Notifications\SendResultsPdfNotification;
 use App\Option;
+use App\Profile;
 use App\Result;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Date;
@@ -19,7 +20,7 @@ class TestsController extends Controller
     public function index()
     {
 
-        $tests = Category::whereisActive(1)->orderByDesc('id')->paginate(10);
+        $tests = Category::whereisActive(1)->orderBy('id')->paginate(10);
 
         return view('client.test', compact('tests'));
     }
@@ -36,7 +37,9 @@ class TestsController extends Controller
 
         $options = collect($options);
 
-        $result = auth()->user()->userResults()->create([
+        $profile = Profile::find($request->profile);
+
+        $result = $profile->profileResults()->create([
             'total_points' => $options->sum('point'),
             'category_id'  => $request->category_id,
         ]);
@@ -58,12 +61,16 @@ class TestsController extends Controller
 
         $test = Category::whereSlug($slug)->whereisActive(1)->first();
 
-        abort_if(($test->is_active == 0 && Gate::denies('category_access')), Response::HTTP_NOT_FOUND, 'NOT FOUND');
+        return redirect()->route('profile.index', $test->id);
+    }
 
+    public function test_profile($slug, $profile){
+
+        $test = Category::whereSlug($slug)->whereisActive(1)->first();
 
         $dateNow = Carbon::now();
 
-        return view('client.test.test', compact('test', 'dateNow'));
+        return view('client.test.test', compact('test', 'dateNow', 'profile'));
     }
 
     private function passArray($string){

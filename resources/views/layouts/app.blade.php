@@ -21,6 +21,8 @@
 
     <!-- Scripts -->
     @yield('styles')
+
+    @yield('top-script')
 </head>
 
 <body class="header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden login-page">
@@ -92,6 +94,8 @@
 
 <script src="{{asset('app/assets/js/jquery-3.3.1.min.js')}}"></script>
 <script src="{{asset('app/assets/js/bootstrap.min.js')}}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.full.min.js"></script>
+
 
     @yield('scripts')
 

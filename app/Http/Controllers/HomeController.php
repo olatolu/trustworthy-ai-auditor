@@ -54,7 +54,8 @@ class HomeController extends Controller
 //            Session::put('url.intended', url()->full());
 //            return redirect(route('client.getu.check'));
 //        }else{
-            return redirect(route('profile.index', $test->id));
+             return redirect(route('client.get.test.start', $test->slug));
+            //return redirect(route('profile.index', $test->id));
 //        }
 
     }

@@ -19,10 +19,6 @@ class StoreOptionRequest extends FormRequest
     public function rules()
     {
         return [
-            'question_id' => [
-                'required',
-                'integer',
-            ],
             'option_text' => [
                 'required',
             ],

@@ -25,7 +25,8 @@
                 <form method="POST" action="{{ route('client.profile.store',$id) }}" id="reg-form">
                     {{ csrf_field() }}
 
-                    <h2 class="m-3 text-center">PROFILE - GENERIC INFORMATION OF TRUSTWORTHY AI AND STANDARDS</h2>
+                    <h2 class="m-3 text-center">{{$title}}</h2>
+                    @if($id != 0)<h6 class="font-weight-bold pb-2">PROFILE - GENERIC INFORMATION OF TRUSTWORTHY AI AND STANDARDS</h6>@endif
 
                     <div class="row justify-content-center">
                         <!-- Left Column -->
@@ -171,17 +172,17 @@
                                            value="Size of Organization for of AI Applications">
 
                                     <div class="btn-group-toggle" data-toggle="buttons">
-                                        <label class="btn btn-outline-info {{(old('q3') == '1 - 100')? 'active': '' }} options"
+                                        <label class="btn btn-outline-info {{(old('q3') == '1 - 250')? 'active': '' }} options"
                                                data-target="q3_other">
-                                            <input type="radio" name="q3" value="1 - 100"
-                                                   autocomplete="off" {{(old('q3') == '1 - 100')? 'checked': '' }}>
-                                            1 - 100
+                                            <input type="radio" name="q3" value="1 - 250"
+                                                   autocomplete="off" {{(old('q3') == '1 - 250')? 'checked': '' }}>
+                                            1 - 250
                                         </label>
-                                        <label class="btn btn-outline-success options {{(old('q3') == '100 - 1000')? 'active': '' }}"
+                                        <label class="btn btn-outline-success options {{(old('q3') == '251 - 1000')? 'active': '' }}"
                                                data-target="q3_other">
-                                            <input type="radio" name="q3" value="100 - 1000"
-                                                   autocomplete="off" {{(old('q3') == '100 - 1000')? 'checked': '' }}>
-                                            100 - 1000
+                                            <input type="radio" name="q3" value="251 - 1000"
+                                                   autocomplete="off" {{(old('q3') == '251 - 1000')? 'checked': '' }}>
+                                            251 - 1000
                                         </label>
 
                                         <label class="btn btn-outline-warning options other {{(old('q3') == 'Others')? 'active': '' }}"
@@ -684,6 +685,12 @@
                                                autocomplete="off" {{(old('q10') == "Development")? 'checked': '' }}>Development
                                     </label>
 
+                                    <label class="btn btn-outline-dark options {{(old('q10') == 'Operational and Monitoring')? 'active': '' }}"
+                                           data-target="q10_other">
+                                        <input type="radio" name="q10" value="Operational and Monitoring"
+                                               autocomplete="off" {{(old('q10') == "Operational and Monitoring")? 'checked': '' }}>Operational and Monitoring
+                                    </label>
+
                                     <label class="btn btn-outline-warning options other {{(old('q10') == 'Others')? 'active': '' }}"
                                            data-target="q10_other">
                                         <input type="radio" name="q10" value="Others"
@@ -807,10 +814,10 @@
                         <!-- Question 12 -->
                         <div class="form-group">
                             <fieldset class="border p-2">
-                                <legend class="w-auto">12. (Optional) Major Barrier(s) to the Adoption for Trustworthy AI:
+                                <legend class="w-auto">12. Major Barrier(s) to the Adoption for Trustworthy AI:
                                 </legend>
                                 <input type="hidden" name="q12_name"
-                                       value="(Optional) Major Barrier(s) to the Adoption for Trustworthy AI:">
+                                       value="Major Barrier(s) to the Adoption for Trustworthy AI:">
 
                                 <div class="btn-group-toggle" data-toggle="buttons">
                                     <label class="btn btn-outline-info {{(old('q12') == 'Lack of Knowledge/Skillset')? 'active': '' }} options"
@@ -876,7 +883,7 @@
                         </div>
 
                         <div class="col-md-12">
-
+                            <input type="hidden" name="assessment" value="{{$id}}">
                             <button class="btn btn-block btn-primary">
                                 {{($id == 0) ? 'Submit':'Continue'}}
                             </button>
@@ -1001,5 +1008,6 @@
 
     {!! JsValidator::formRequest('App\Http\Requests\ProfileStoreRequest', '#reg-form'); !!}
 
-
+{{--            1,2,5,6,7,8,9,12--}}
 @endsection
+
