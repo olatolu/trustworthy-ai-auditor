@@ -830,7 +830,7 @@
                                            data-target="q12_other">
                                         <input type="radio" name="q12" value="Finance/Cost"
                                                autocomplete="off" {{(old('q12') == 'Finance/Cost')? 'checked': '' }}>
-                                        Analysis and Design
+                                        Finance/Cost
                                     </label>
 
                                     <label class="btn btn-outline-success options {{(old('q12') == 'Lack of Personnel')? 'active': '' }}"

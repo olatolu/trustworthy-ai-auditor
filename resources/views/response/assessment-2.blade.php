@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title') - $test->name | $result->id @endsection
+@section('title') - {{$test->name}} | {{$result->id}} @endsection
 
 @section('styles')
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.css">
@@ -179,9 +179,9 @@
                     <tbody>
                     <tr class="bg-info">
                         <td>Trustworthy Quotient (TQ) of AI Applications</td>
-                        <td>x%</td>
-                        <td>Y%</td>
-                        <td>x%</td>
+                        <td>{{$section_1_score_percent}}%</td>
+                        <td>{{$section_2_score_percent}}%</td>
+                        <td>{{$over_all_percent}}%</td>
                         <td></td>
                         <td></td>
                     </tr>

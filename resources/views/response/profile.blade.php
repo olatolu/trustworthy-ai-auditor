@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title') - Register @endsection
+@section('title')REPORT - GENERIC INFORMATION OF TRUSTWORTHY AI AND STANDARDS - Register @endsection
 
 @section('styles')
 

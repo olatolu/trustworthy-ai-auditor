@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title') - $test->name | $result->id @endsection
+@section('title') - {{$test->name}} | {{$result->id}} @endsection
 
 @section('styles')
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.css">
@@ -93,6 +93,7 @@
             <tr>
                 <td>
                     <center>
+                        <h6 style="font-size: 14px !important; font-weight: bolder; margin-bottom: 10px;">READINESS STANDARDS ANALYTIC</h6>
                             <div class="chartContainer">
                                 <canvas id="myChart" width="900" height="400"></canvas>
                             </div>
@@ -112,6 +113,7 @@
         <div class="row justify-content-center p-2 w-75 ml-auto mr-auto">
             <!-- Left Column -->
             <div class="col-md-12 mb-5">
+                <h6 style="font-size: 14px !important; font-weight: bolder; margin-bottom: 10px; text-align: center;">ORGANIZATIONAL READINESS LEVEL</h6>
                 <table class="table table-bordered justify-content-center w-50 m-auto">
                     <thead>
                     <tr>
@@ -138,10 +140,10 @@
                         <td class="tb-bg-level-5">81% - 100%</td>
                     </tr>
                     <tr>
-                        <td colspan="5" class="text-center">READINESS SCORE = x%</td>
+                        <td colspan="5" class="text-center">READINESS SCORE = <span class="font-weight-bold">{{$score_percent}}%</span></td>
                     </tr>
                     <tr>
-                        <td colspan="5" class="text-center">READINESS LEVEL = Y</td>
+                        <td colspan="5" class="text-center">READINESS LEVEL = <span class="font-weight-bold">{{$level}}</span></td>
                     </tr>
                     </tbody>
                 </table>
@@ -149,6 +151,7 @@
 
             <!-- RIGHT Column -->
             <div class="col-md-12">
+                <h6 style="font-size: 14px !important; font-weight: bolder; margin-bottom: 10px; text-align: center;">RECOMMENDED TRUSTWORTHY AI TOOLKITS AND GUIDELINES</h6>
                 <table class="table table-bordered table-responsive">
                     <thead>
                     <tr>
@@ -238,6 +241,10 @@
 
                     </tbody>
                 </table>
+                <div class="p-2">
+                    <h6 style="font-size: 14px !important; font-weight: bolder; margin-bottom: 10px; text-align: center;">RECOMMENDED ACTIONS</h6>
+                    <p>This is a provisional report and is subject to moderation and approval after qualitative assessment or audit.</p>
+                </div>
             </div>
         </div>
 

@@ -11,6 +11,13 @@ class Category extends Model
 {
     use HasSlug;
 
+    public const COLORS = [
+        'color-2'=>'#ffa700',
+        'color-3'=>'#00b4d9',
+        'color-4'=>'#2ab943',
+        'color-5'=>'#029A83',
+    ];
+
     /**
      * Get the options for generating the slug.
      */
@@ -104,5 +111,9 @@ class Category extends Model
     public function setSectionsHeadingsAttribute($value)
     {
         $this->attributes['sections_headings'] = json_encode($value);
+    }
+
+    public function color(){
+        return self::COLORS[$this->style];
     }
 }
