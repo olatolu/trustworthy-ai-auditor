@@ -5,6 +5,12 @@
 @section('styles')
 
     <style>
+
+        .select2 {
+            max-width: 100%;
+            width: 100% !important;
+        }
+
         fieldset legend {
             font-size: 18px !important;
             font-width: bold !important;
