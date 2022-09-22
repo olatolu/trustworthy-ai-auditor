@@ -31,9 +31,9 @@ class ProfileRegisterRequest extends FormRequest
             'manufacturer_name'=>'required_if:type,new',
             'country'=>'required_if:type,new',
             'release_date'=>'required_if:type,new',
-            'source_url'=>'nullable|required_if:type,new|url',
+            'source_url'=>'nullable|required_if:type,new',
             'description'=>'required_if:type,new|max:500',
-            'attachment'=>['nullable','file','required_if:type,new','max:6048','mimes:pdf,png,jpg,jpeg'],
+            'attachment'=>['nullable','file','max:6048','mimes:pdf,png,jpg,jpeg'],
         ];
     }
 }
