@@ -99,7 +99,25 @@
                                     <legend class="w-auto">New Toolkit Info:
                                     </legend>
 
-                                    <div class="form-group">
+                                    <div class="form-group pb-2">
+                                        <label for="" class="font-weight-bold">Name of AI Application/Toolkit</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="fa fa-user fa-fw"></i>
+                                            </span>
+                                            </div>
+                                            <input type="text" name="name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="Name of AI Application/Toolkit" value="{{ old('name', null) }}">
+                                            @if($errors->has('name'))
+                                                <div class="invalid-feedback">
+                                                    {{ $errors->first('name') }}
+                                                </div>
+                                            @endif
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group pb-2">
+                                        <label for="" class="font-weight-bold">Manufacturer of Trustworthy AI Toolkit</label>
                                         <div class="input-group">
                                             <div class="input-group-prepend">
                                             <span class="input-group-text">
@@ -115,7 +133,8 @@
                                         </div>
                                     </div>
 
-                                    <div class="form-group">
+                                    <div class="form-group pn-2">
+                                        <label for="" class="font-weight-bold">Location</label>
                                         <div class="input-group">
                                             <div class="input-group-prepend">
                                             <span class="input-group-text">
@@ -134,14 +153,15 @@
                                                     {{ $errors->first('country') }}
                                                 </div>
                                             @endif
-                                            <div class="w-100 d-inline-block"><small class="form-text text-muted d-inline-block">
-                                                    Country of Manufacturer
-                                                </small>
-                                            </div>
+{{--                                            <div class="w-100 d-inline-block"><small class="form-text text-muted d-inline-block">--}}
+{{--                                                    Country of Manufacturer--}}
+{{--                                                </small>--}}
+{{--                                            </div>--}}
                                         </div>
                                     </div>
 
-                                    <div class="form-group">
+                                    <div class="form-group pb-2">
+                                        <label for="" class="font-weight-bold">Date of Release or Manufacture</label>
                                         <div class="input-group date" id="datepicker">
                                             <div class="input-group-prepend">
                                             <span class="input-group-text">
@@ -154,14 +174,11 @@
                                                     {{ $errors->first('release_date') }}
                                                 </div>
                                             @endif
-                                            <div class="w-100 d-inline-block"><small class="form-text text-muted d-inline-block">
-                                                    Date of Release or Manufacture
-                                                </small>
-                                            </div>
                                         </div>
                                     </div>
 
-                                    <div class="form-group">
+                                    <div class="form-group pb-2">
+                                        <label for="" class="font-weight-bold">Source Link</label>
                                         <div class="input-group">
                                             <div class="input-group-prepend">
                                             <span class="input-group-text">
@@ -177,7 +194,8 @@
                                         </div>
                                     </div>
 
-                                    <div class="form-group">
+                                    <div class="form-group pb-2">
+                                        <label for="" class="font-weight-bold">Brief Description of Toolkits</label>
                                         <div class="input-group">
                                             <div class="input-group-prepend">
                                             <span class="input-group-text">
@@ -193,7 +211,8 @@
                                         </div>
                                     </div>
 
-                                    <div class="form-group">
+                                    <div class="form-group pb-2">
+                                        <label for="" class="font-weight-bold">Attachment of Relevant Documentation</label>
                                         <div class="input-group">
                                             <div class="input-group-prepend">
                                             <span class="input-group-text">
@@ -206,11 +225,6 @@
                                                     {{ $errors->first('attachment') }}
                                                 </div>
                                             @endif
-
-                                            <div class="w-100 d-inline-block"><small class="form-text text-muted d-inline-block">
-                                                    Attachment of Relevant Documentation
-                                                </small>
-                                            </div>
                                         </div>
                                     </div>
                                 </fieldset>

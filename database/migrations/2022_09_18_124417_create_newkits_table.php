@@ -17,6 +17,7 @@ class CreateNewkitsTable extends Migration
             $table->increments('id');
             $table->string('type')->nullable();
             $table->bigInteger('toolkit_id')->nullable();
+            $table->string('name')->nullable();
             $table->string('manufacturer_name')->nullable();
             $table->string('country')->nullable();
             $table->date('release_date')->nullable();

@@ -168,35 +168,35 @@
                         <td>a3i the Trust in AI Framework</td>
                         <td class="rank"><span class="green">+ 0.70%</span><span class="red">- 2 places</span> </td>
                         <td>2021</td>
-                        <td>Academia</td>
+                        <td>Non-platform</td>
                     </tr>
                     <tr>
                         <th scope="row">2</th>
                         <td>AI Now Institute Algorithmic Accountability Policy Toolkit</td>
                         <td class="rank"><span class="green">+ 0.30%</span><span class="red">- 3 places</span> </td>
                         <td>2021</td>
-                        <td>Government</td>
+                        <td>In-platform</td>
                     </tr>
                     <tr>
                         <th scope="row">3</th>
                         <td>AI-RFX Procurement Framework</td>
                         <td class="rank"><span class="red">+ 0.80%</span><span class="red">- 1 place</span> </td>
                         <td>2019</td>
-                        <td>FP: For-Profit</td>
+                        <td>In-platform</td>
                     </tr>
                     <tr>
                         <th scope="row">4</th>
                         <td>FactSheets: Increasing Trust in AI Services through supplier’s declarations of conformity</td>
                         <td class="rank"><span class="green">+ 10.00%</span><span class="green">- 2 places</span> </td>
                         <td>2021</td>
-                        <td>NFP: Not-For-Profit</td>
+                        <td>Non-platform</td>
                     </tr>
                     <tr>
                         <th scope="row">5</th>
                         <td>Humans in AI Trello Board</td>
                         <td class="rank"><span class="green">+ 0.10%</span><span class="red">- 2 places</span> </td>
                         <td>2018</td>
-                        <td>Academia</td>
+                        <td>In-platform</td>
                     </tr>
 
                     <tr>
@@ -204,7 +204,7 @@
                         <td>Diakopoulos  et al. Principles for Accountable Algorithms and Statement for algorithms</td>
                         <td class="rank"><span class="green">+ 0.20%</span><span class="red">- 3 places</span> </td>
                         <td>2019</td>
-                        <td>Government</td>
+                        <td>In-platform</td>
                     </tr>
 
                     <tr>
@@ -212,7 +212,7 @@
                         <td>Algorithm Tips - Resources and Leads for investigating algorithms in society</td>
                         <td class="rank"><span class="red">+ 0.40%</span><span class="red">- 1 place</span> </td>
                         <td>2019</td>
-                        <td>FP: For-Profit</td>
+                        <td>Non-platform</td>
                     </tr>
 
                     <tr>
@@ -220,7 +220,7 @@
                         <td>DotEveryone. The Consequence Scanning Event</td>
                         <td class="rank"><span class="green">+ 20.0%</span><span class="green">- 2 places</span> </td>
                         <td>2021</td>
-                        <td>NFP: Not-For-Profit</td>
+                        <td>Non-platform</td>
                     </tr>
 
                     <tr>
@@ -228,7 +228,7 @@
                         <td>Epstein (2018) TuringBox: An experimental Platform for the evaluation of AI systems</td>
                         <td class="rank"><span class="green">+ 0.20%</span><span class="red">- 2 places</span> </td>
                         <td>2018</td>
-                        <td>Academia</td>
+                        <td>In-platform</td>
                     </tr>
 
                     <tr>
@@ -236,7 +236,7 @@
                         <td>Friedman et al (2017) a survey of value sensitive design methods</td>
                         <td class="rank"><span class="red">+ 0.30%</span><span class="red">- 1 place</span> </td>
                         <td>2017</td>
-                        <td>Government</td>
+                        <td>In-platform</td>
                     </tr>
 
                     </tbody>

@@ -30,6 +30,11 @@
             left: 8rem;
             top: .3125rem
         }
+
+        .inner-circle .inner-content{
+            position: absolute;
+            color: #fff !important;
+        }
         .timeline-steps .timeline-st:nth-child(1)ep:not(:first-child):before {
             content: "";
             display: block;
@@ -128,30 +133,30 @@
                         <div class="timeline-steps aos-init aos-animate" data-aos="fade-up">
                             <div class="timeline-step">
                                 <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2003">
-                                    <div class="inner-circle"></div>
+                                    <div class="inner-circle"><span class="inner-content">Complete</span></div>
                                     <p class="h6 mt-3 mb-1">NEW SCORING AND RANKING</p>
-                                    <p class="h6 text-muted mb-0 mb-lg-0">Complete</p>
+                                    <p class="h6 text-muted mb-0 mb-lg-0"></p>
                                 </div>
                             </div>
                             <div class="timeline-step">
                                 <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2004">
-                                    <div class="inner-circle"></div>
+                                    <div class="inner-circle"><span class="inner-content">Ongoing</span></div>
                                     <p class="h6 mt-3 mb-1">REVIEW</p>
-                                    <p class="h6 text-muted mb-0 mb-lg-0">Ongoing</p>
+                                    <p class="h6 text-muted mb-0 mb-lg-0"></p>
                                 </div>
                             </div>
                             <div class="timeline-step">
                                 <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2005">
-                                    <div class="inner-circle"></div>
+                                    <div class="inner-circle"><span class="inner-content">Next</span></div>
                                     <p class="h6 mt-3 mb-1">APPROVAL</p>
-                                    <p class="h6 text-muted mb-0 mb-lg-0">Next</p>
+                                    <p class="h6 text-muted mb-0 mb-lg-0"></p>
                                 </div>
                             </div>
                             <div class="timeline-step">
                                 <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2010">
-                                    <div class="inner-circle"></div>
+                                    <div class="inner-circle"><span class="inner-content">Planned</span></div>
                                     <p class="h6 mt-3 mb-1">PUBLISH</p>
-                                    <p class="h6 text-muted mb-0 mb-lg-0">Planned</p>
+                                    <p class="h6 text-muted mb-0 mb-lg-0"></p>
                                 </div>
                             </div>
                         </div>

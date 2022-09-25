@@ -45,10 +45,16 @@ class ProfileStoreRequest extends FormRequest
     private static function field_rules($fields_num = 11)
     {
         $rules = [];
+        $arrays = [1, 6, 8, 9, 12];
 
         for($i = 1; $i <= $fields_num; $i++){
-            $rules['q'.$i] = 'required';
-            $rules['q'.$i.'_other'] = 'required_if:q'.$i.',Others';
+            if(in_array($i, $arrays)){
+                $rules['q' . $i] = 'required|array';
+                $rules['q' . $i . '_other'] = 'required_if:q' . $i . '_get_others,Others';
+            }else {
+                $rules['q' . $i] = 'required';
+                $rules['q' . $i . '_other'] = 'required_if:q' . $i . ',Others';
+            }
         }
         $rules['assessment'] = 'required';
         return $rules;

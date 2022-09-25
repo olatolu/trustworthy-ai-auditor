@@ -29,6 +29,7 @@ class ProfileRegisterRequest extends FormRequest
             'type'=>'required',
             'toolkit_id'=>'required_if:type,existing',
             'manufacturer_name'=>'required_if:type,new',
+            'name'=>'required_if:type,new',
             'country'=>'required_if:type,new',
             'release_date'=>'required_if:type,new',
             'source_url'=>'nullable|required_if:type,new',

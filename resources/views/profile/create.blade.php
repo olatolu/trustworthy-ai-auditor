@@ -13,6 +13,14 @@
         .btn-group-toggle label {
             margin-bottom: 3px !important;
         }
+        #checkbox-group {
+            display: inline-block !important;
+        }
+
+        #checkbox-group label{
+            border-radius: 0.25rem !important;
+        }
+
 
     </style>
 
@@ -39,34 +47,30 @@
                                     <input type="hidden" name="q1_name"
                                            value="Role(s) of Respondent in Trustworthy AI Application">
 
-                                    <div class="btn-group-toggle" data-toggle="buttons">
-                                        <label class="btn btn-outline-info {{(old('q1') == 'Designer/Developer')? 'active': '' }} options"
-                                               data-target="q1_other">
-                                            <input type="radio" name="q1" value="Designer/Developer"
+                                    <div class="btn-group-toggle" id="checkbox-group" data-toggle="buttons">
+                                        <label class="btn btn-outline-info {{(old('q1') == 'Designer/Developer')? 'active': '' }}">
+                                            <input type="checkbox" name="q1[]" value="Designer/Developer"
                                                    autocomplete="off" {{(old('q1') == 'Designer/Developer')? 'checked': '' }} required>
                                             Designer/Developer
                                         </label>
-                                        <label class="btn btn-outline-success options {{(old('q1') == 'Supplier/Vendor')? 'active': '' }}"
-                                               data-target="q1_other">
-                                            <input type="radio" name="q1" value="Supplier/Vendor"
+                                        <label class="btn btn-outline-success {{(old('q1') == 'Supplier/Vendor')? 'active': '' }}">
+                                            <input type="checkbox" name="q1[]" value="Supplier/Vendor"
                                                    autocomplete="off" {{(old('q1') == 'Supplier/Vendor')? 'checked': '' }} required>
                                             Supplier/Vendor
                                         </label>
-                                        <label class="btn btn-outline-primary options {{(old('q1') == 'Buyer')? 'active': '' }}"
-                                               data-target="q1_other">
-                                            <input type="radio" name="q1" value="Buyer"
+                                        <label class="btn btn-outline-primary {{(old('q1') == 'Buyer')? 'active': '' }}">
+                                            <input type="checkbox" name="q1[]" value="Buyer"
                                                    autocomplete="off" {{(old('q1') == 'Buyer')? 'checked': '' }} required> Buyer
                                         </label>
-                                        <label class="btn btn-outline-success options {{(old('q1') == 'End User/Public')? 'active': '' }}"
-                                               data-target="q1_other">
-                                            <input type="radio" name="q1" value="End User/Public"
+                                        <label class="btn btn-outline-success {{(old('q1') == 'End User/Public')? 'active': '' }}">
+                                            <input type="checkbox" name="q1[]" value="End User/Public"
                                                    autocomplete="off" {{(old('q1') == 'End User/Public')? 'checked': '' }} required>
                                             End
                                             User/Public
                                         </label>
-                                        <label class="btn btn-outline-warning options {{(old('q1') == 'Others')? 'active': '' }} other"
+                                        <label class="btn btn-outline-warning options checkbox-check {{(old('q1') == 'Others')? 'active': '' }}"
                                                data-target="q1_other">
-                                            <input type="radio" name="q1" value="Others"
+                                            <input type="checkbox" name="q1_get_others" value="Others"
                                                    autocomplete="off" {{(old('q1') == 'Others')? 'checked': '' }}>
                                             Others
                                         </label>
@@ -383,23 +387,21 @@
                                     <input type="hidden" name="q6_name"
                                            value="Purpose of Trustworthy AI Applications">
 
-                                    <div class="btn-group-toggle" data-toggle="buttons">
-                                        <label class="btn btn-outline-info {{(old('q6') == 'AI for Operations/Support')? 'active': '' }} options"
-                                               data-target="q6_other">
-                                            <input type="radio" name="q6" value="AI for Operations/Support"
+                                    <div class="btn-group-toggle" id="checkbox-group" data-toggle="buttons">
+                                        <label class="btn btn-outline-info {{(old('q6') == 'AI for Operations/Support')? 'active': '' }}">
+                                            <input type="checkbox" name="q6[]" value="AI for Operations/Support"
                                                    autocomplete="off" {{(old('q6') == 'AI for Operations/Support')? 'checked': '' }}>
                                             AI for Operations/Support
                                         </label>
-                                        <label class="btn btn-outline-success options {{(old('q6') == 'AI for Audit/Compliance')? 'active': '' }}"
-                                               data-target="q6_other">
-                                            <input type="radio" name="q6" value="AI for Audit/Compliance"
+                                        <label class="btn btn-outline-success {{(old('q6') == 'AI for Audit/Compliance')? 'active': '' }}">
+                                            <input type="checkbox" name="q6[]" value="AI for Audit/Compliance"
                                                    autocomplete="off" {{(old('q6') == 'AI for Audit/Compliance')? 'checked': '' }}>
                                             AI for Audit/Compliance
                                         </label>
 
-                                        <label class="btn btn-outline-warning options other {{(old('q6') == 'Others')? 'active': '' }}"
+                                        <label class="btn btn-outline-warning options other checkbox-check {{(old('q6') == 'Others')? 'active': '' }}"
                                                data-target="q6_other">
-                                            <input type="radio" name="q6" value="Others"
+                                            <input type="checkbox" name="q6_get_others" value="Others"
                                                    autocomplete="off" {{(old('q6') == 'Others')? 'checked': '' }}>
                                             Others
                                         </label>
@@ -493,44 +495,39 @@
                                     <input type="hidden" name="q8_name"
                                            value="Score Your Priority for the Adoption for Trustworthy AI">
 
-                                    <div class="btn-group-toggle" data-toggle="buttons">
-                                        <label class="btn btn-outline-info {{(old('q8') == 'Market Growth')? 'active': '' }} options"
-                                               data-target="q8_other">
-                                            <input type="radio" name="q8" value="Market Growth"
+                                    <div class="btn-group-toggle" id="checkbox-group" data-toggle="buttons">
+                                        <label class="btn btn-outline-info {{(old('q8') == 'Market Growth')? 'active': '' }}">
+                                            <input type="checkbox" name="q8[]" value="Market Growth"
                                                    autocomplete="off" {{(old('q8') == 'Market Growth')? 'checked': '' }}>
                                             Market Growth
                                         </label>
-                                        <label class="btn btn-outline-success options {{(old('q8') == 'Financial Growth')? 'active': '' }}"
-                                               data-target="q8_other">
-                                            <input type="radio" name="q8" value="Financial Growth"
+                                        <label class="btn btn-outline-success {{(old('q8') == 'Financial Growth')? 'active': '' }}">
+                                            <input type="checkbox" name="q8[]" value="Financial Growth"
                                                    autocomplete="off" {{(old('q8') == 'Financial Growth')? 'checked': '' }}>
                                             Financial Growth
                                         </label>
 
-                                        <label class="btn btn-outline-dark options {{(old('q8') == 'Reputation/Brand')? 'active': '' }}"
-                                               data-target="q8_other">
-                                            <input type="radio" name="q8" value="Reputation/Brand"
+                                        <label class="btn btn-outline-dark {{(old('q8') == 'Reputation/Brand')? 'active': '' }}">
+                                            <input type="checkbox" name="q8[]" value="Reputation/Brand"
                                                    autocomplete="off" {{(old('q8') == 'Reputation/Brand')? 'checked': '' }}>
                                             Reputation/Brand
                                         </label>
 
-                                        <label class="btn btn-outline-success options {{(old('q8') == 'Compliance/Risk')? 'active': '' }}"
-                                               data-target="q8_other">
-                                            <input type="radio" name="q8" value="Compliance/Risk"
+                                        <label class="btn btn-outline-success {{(old('q8') == 'Compliance/Risk')? 'active': '' }}">
+                                            <input type="checkbox" name="q8[]" value="Compliance/Risk"
                                                    autocomplete="off" {{(old('q8') == 'Compliance/Risk')? 'checked': '' }}>
                                             Compliance/Risk
                                         </label>
 
-                                        <label class="btn btn-outline-dark options {{(old('q8') == 'Social Good')? 'active': '' }}"
-                                               data-target="q8_other">
-                                            <input type="radio" name="q8" value="Social Good"
+                                        <label class="btn btn-outline-dark {{(old('q8') == 'Social Good')? 'active': '' }}">
+                                            <input type="checkbox" name="q8[]" value="Social Good"
                                                    autocomplete="off" {{(old('q8') == 'Social Good')? 'checked': '' }}>
                                             Social Good
                                         </label>
 
-                                        <label class="btn btn-outline-warning options other {{(old('q8') == 'Others')? 'active': '' }}"
+                                        <label class="btn btn-outline-warning options checkbox-check {{(old('q8') == 'Others')? 'active': '' }}"
                                                data-target="q8_other">
-                                            <input type="radio" name="q8" value="Others"
+                                            <input type="checkbox" name="q8_get_others" value="Others"
                                                    autocomplete="off" {{(old('q8') == 'Others')? 'checked': '' }}>
                                             Others
                                         </label>
@@ -575,58 +572,51 @@
                                 <input type="hidden" name="q9_name"
                                        value="Organizational Department (Function) for Trustworthy AI Use">
 
-                                <div class="btn-group-toggle" data-toggle="buttons">
-                                    <label class="btn btn-outline-info {{(old('q9') == 'Strategy')? 'active': '' }} options"
-                                           data-target="q9_other">
-                                        <input type="radio" name="q9" value="Strategy"
+                                <div class="btn-group-toggle" id="checkbox-group" data-toggle="buttons">
+                                    <label class="btn btn-outline-info {{(old('q9') == 'Strategy')? 'active': '' }}">
+                                        <input type="checkbox" name="q9[]" value="Strategy"
                                                autocomplete="off" {{(old('q9') == 'Strategy')? 'checked': '' }}>
                                         Strategy
                                     </label>
-                                    <label class="btn btn-outline-success options {{(old('q9') == 'Sales')? 'active': '' }}"
-                                           data-target="q9_other">
-                                        <input type="radio" name="q9" value="Sales"
+                                    <label class="btn btn-outline-success {{(old('q9') == 'Sales')? 'active': '' }}">
+                                        <input type="checkbox" name="q9[]" value="Sales"
                                                autocomplete="off" {{(old('q9') == 'Sales')? 'checked': '' }}>
                                         Sales
                                     </label>
 
-                                    <label class="btn btn-outline-dark options {{(old('q9') == 'Marketing')? 'active': '' }}"
-                                           data-target="q9_other">
-                                        <input type="radio" name="q9" value="Marketing"
+                                    <label class="btn btn-outline-dark {{(old('q9') == 'Marketing')? 'active': '' }}">
+                                        <input type="checkbox" name="q9[]" value="Marketing"
                                                autocomplete="off" {{(old('q9') == 'Marketing')? 'checked': '' }}>
                                         Marketing
                                     </label>
 
-                                    <label class="btn btn-outline-success options {{(old('q9') == 'Admin')? 'active': '' }}"
-                                           data-target="q9_other">
-                                        <input type="radio" name="q9" value="Admin"
+                                    <label class="btn btn-outline-success {{(old('q9') == 'Admin')? 'active': '' }}">
+                                        <input type="checkbox" name="q9[]" value="Admin"
                                                autocomplete="off" {{(old('q9') == 'Admin')? 'checked': '' }}>
                                         Admin
                                     </label>
 
-                                    <label class="btn btn-outline-dark options {{(old('q9') == 'HR')? 'active': '' }}"
-                                           data-target="q9_other">
-                                        <input type="radio" name="q9" value="HR"
+                                    <label class="btn btn-outline-dark {{(old('q9') == 'HR')? 'active': '' }}">
+                                        <input type="checkbox" name="q9[]" value="HR"
                                                autocomplete="off" {{(old('q9') == 'HR')? 'checked': '' }}>
                                         HR
                                     </label>
 
-                                    <label class="btn btn-outline-dark options {{(old('q9') == 'IT')? 'active': '' }}"
-                                           data-target="q9_other">
-                                        <input type="radio" name="q9" value="IT"
+                                    <label class="btn btn-outline-dark {{(old('q9') == 'IT')? 'active': '' }}">
+                                        <input type="checkbox" name="q9[]" value="IT"
                                                autocomplete="off" {{(old('q9') == 'IT')? 'checked': '' }}>
                                         IT
                                     </label>
 
-                                    <label class="btn btn-outline-dark options {{(old('q9') == 'Supply/Distribution')? 'active': '' }}"
-                                           data-target="q9_other">
-                                        <input type="radio" name="q9" value="Supply/Distribution"
+                                    <label class="btn btn-outline-dark {{(old('q9') == 'Supply/Distribution')? 'active': '' }}">
+                                        <input type="checkbox" name="q9[]" value="Supply/Distribution"
                                                autocomplete="off" {{(old('q9') == 'Supply/Distribution')? 'checked': '' }}>
                                         HR
                                     </label>
 
-                                    <label class="btn btn-outline-warning options other {{(old('q9') == 'Others')? 'active': '' }}"
+                                    <label class="btn btn-outline-warning options checkbox-check {{(old('q9') == 'Others')? 'active': '' }}"
                                            data-target="q9_other">
-                                        <input type="radio" name="q9" value="Others"
+                                        <input type="checkbox" name="q9_get_others" value="Others"
                                                autocomplete="off" {{(old('q9') == 'Others')? 'checked': '' }}>
                                         Others
                                     </label>
@@ -819,37 +809,33 @@
                                 <input type="hidden" name="q12_name"
                                        value="Major Barrier(s) to the Adoption for Trustworthy AI:">
 
-                                <div class="btn-group-toggle" data-toggle="buttons">
-                                    <label class="btn btn-outline-info {{(old('q12') == 'Lack of Knowledge/Skillset')? 'active': '' }} options"
-                                           data-target="q12_other">
-                                        <input type="radio" name="q12" value="Lack of Knowledge/Skillset"
+                                <div class="btn-group-toggle" id="checkbox-group" data-toggle="buttons">
+                                    <label class="btn btn-outline-info {{(old('q12') == 'Lack of Knowledge/Skillset')? 'active': '' }}">
+                                        <input type="checkbox" name="q12[]" value="Lack of Knowledge/Skillset"
                                                autocomplete="off" {{(old('q12') == 'Lack of Knowledge/Skillset')? 'checked': '' }}>
                                         Lack of Knowledge/Skillset
                                     </label>
-                                    <label class="btn btn-outline-success options {{(old('q12') == 'Finance/Cost')? 'active': '' }}"
-                                           data-target="q12_other">
-                                        <input type="radio" name="q12" value="Finance/Cost"
+                                    <label class="btn btn-outline-success {{(old('q12') == 'Finance/Cost')? 'active': '' }}">
+                                        <input type="checkbox" name="q12[]" value="Finance/Cost"
                                                autocomplete="off" {{(old('q12') == 'Finance/Cost')? 'checked': '' }}>
                                         Finance/Cost
                                     </label>
 
-                                    <label class="btn btn-outline-success options {{(old('q12') == 'Lack of Personnel')? 'active': '' }}"
-                                           data-target="q12_other">
-                                        <input type="radio" name="q12" value="Lack of Personnel"
+                                    <label class="btn btn-outline-success {{(old('q12') == 'Lack of Personnel')? 'active': '' }}">
+                                        <input type="checkbox" name="q12[]" value="Lack of Personnel"
                                                autocomplete="off" {{(old('q12') == 'Lack of Personnel')? 'checked': '' }}>
                                         Lack of Personnel
                                     </label>
 
-                                    <label class="btn btn-outline-success options {{(old('q12') == 'Difficult Regulation')? 'active': '' }}"
-                                           data-target="q12_other">
-                                        <input type="radio" name="q12" value="Difficult Regulation"
+                                    <label class="btn btn-outline-success {{(old('q12') == 'Difficult Regulation')? 'active': '' }}">
+                                        <input type="checkbox" name="q12[]" value="Difficult Regulation"
                                                autocomplete="off" {{(old('q12') == 'Difficult Regulation')? 'checked': '' }}>
                                         Difficult Regulation
                                     </label>
 
-                                    <label class="btn btn-outline-warning options other {{(old('q12') == 'Others')? 'active': '' }}"
+                                    <label class="btn btn-outline-warning options checkbox-check {{(old('q12') == 'Others')? 'active': '' }}"
                                            data-target="q12_other">
-                                        <input type="radio" name="q12" value="Others"
+                                        <input type="checkbox" name="q12_get_others" value="Others"
                                                autocomplete="off" {{(old('q12') == 'Others')? 'checked': '' }}>
                                         Others
                                     </label>
@@ -905,100 +891,24 @@
 
                     $(".options").click(function () {
                         var target = $(this).data('target');
-                        if ($(this).hasClass('other')) {
+                        if($(this).hasClass('checkbox-check')){
+                            $(this).removeClass('checkbox-check');
+                            $(this).addClass('checkbox-checked');
                             $('#' + target).removeClass('d-none');
-                        } else {
+                        }
+                        else if($(this).hasClass('checkbox-checked')){
+                            $(this).removeClass('checkbox-checked');
+                            $(this).addClass('checkbox-check');
+                            $('#' + target + '>input').val('');
+                            $('#' + target).addClass('d-none');
+                        }else if ($(this).hasClass('other')) {
+                            $('#' + target).removeClass('d-none');
+                        }
+                        else {
+                            $('#' + target + '>input').val('');
                             $('#' + target).addClass('d-none');
                         }
-                    });
-
-                    $('#designation').change(function () {
-                        var designation = $(this).val();
-
-                        if (designation == 'Other') {
-
-                            $('#designation').replaceWith('<input type="text" name="designation" id="" class="form-control" required placeholder="{{ trans("global.login_designation") }}">');
-                            $('#designation').focus();
-                        }
-
-
-                    });
-
-                    $('#industry').change(function () {
-                        var industry = $(this).val();
-
-                        if (industry == 'Other') {
-
-                            $('#industry').replaceWith('<input type="text" name="industry" id="" class="form-control" required placeholder="{{ trans("global.login_industry") }}">');
-                            $('#industry').focus();
-                        }
-
-
-                    });
-
-
-                    $.get("https://ipinfo.io", function () {
-                    }, "jsonp").always(function (resp) {
-                        var countryCode = (resp && resp.country) ? resp.country : "";
-                        if (countryCode != "") {
-
-                            $('#country option[value= "' + countryCode + '"]').attr("selected", "selected");
-                        }
-                        if (countryCode != "") {
-                            $.ajax({
-                                type: "GET",
-                                url: "{{url('get-state-list')}}?country_id=" + countryCode,
-                                success: function (res) {
-                                    if (res != 0) {
-                                        $('#emptyState').hide();
-                                        $("#state").empty();
-                                        $("#state").show();
-                                        $("#state").append('<option selected disabled>Choose Your {{ trans("global.login_state") }}</option>');
-                                        $.each(res, function (key, value) {
-                                            $("#state").append('<option value="' + key + '">' + value + '</option>');
-                                        });
-
-                                    } else {
-                                        $("#state").hide();
-                                        $('#state').replaceWith('<input type="text" name="other_state" id="emptyState" class="form-control" placeholder="Other {{ trans("global.login_state") }}">');
-                                    }
-                                }
-                            });
-                        } else {
-                            $("#state").empty();
-                        }
-
-
-                    });
-                });
-
-                $('#country').change(function () {
-                    var countryID = $(this).val();
-
-                    if (countryID) {
-                        $.ajax({
-                            type: "GET",
-                            url: "{{url('get-state-list')}}?country_id=" + countryID,
-                            success: function (res) {
-                                if (res != 0) {
-                                    $('#emptyState').hide();
-                                    $("#state").empty();
-                                    $("#state").show();
-                                    $("#state").append('<option selected disabled>Choose Your {{ trans("global.login_state") }}</option>');
-                                    $.each(res, function (key, value) {
-                                        $("#state").append('<option value="' + key + '">' + value + '</option>');
-                                        $("#state").focus();
-                                    });
-
-                                } else {
-                                    $("#state").hide();
-                                    $('#state').replaceWith('<input type="text" name="other_state" id="emptyState" class="form-control" placeholder="Other {{ trans("global.login_state") }}">');
-                                }
-                            }
-                        });
-                    } else {
-                        $("#state").empty();
-                    }
+                    })
                 });
 
             </script>

@@ -74,16 +74,30 @@ class ProfileController extends Controller
     public function prepare_data(Request $request): array
     {
         $data = [];
+
+        $arrays = [1, 6, 8, 9, 12];
         for($i =1; $i <= 12; $i++){
 
             if($request->has('q'.$i) && $request->has('q'.$i.'_name')){
                 $name = 'q'.$i.'_name';
                 $answer = 'q'.$i;
-                $other = $answer.'_other';
-                $data[] = [
-                    'question'=>$request->$name,
-                    'answer'=>($request->$answer == 'Others') ? $request->$other : $request->$answer
-                 ];
+                if(in_array($i, $arrays)){
+                    $other = $answer.'_other';
+                    $value =  $request->$answer;
+                    if($request->has($other)){
+                        $value[] = $request->$other;
+                    }
+                    $data[] = [
+                        'question' => $request->$name,
+                        'answer' => $value
+                    ];
+                }else {
+                    $other = $answer.'_other';
+                    $data[] = [
+                        'question' => $request->$name,
+                        'answer' => ($request->$answer == 'Others') ? $request->$other : $request->$answer
+                    ];
+                }
             }
         }
 
