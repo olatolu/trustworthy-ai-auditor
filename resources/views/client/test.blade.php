@@ -69,7 +69,7 @@
         <p class="float-right">
             <a href="#">Back to top</a>
         </p>
-        <p>&copy; 2020 All rights reserved | {{ trans('panel.site_title') }} </p>
+        <p>&copy; 2022 All rights reserved | {{ trans('panel.site_title') }} </p>
     </div>
 </footer>
 @endsection
